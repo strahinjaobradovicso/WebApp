@@ -1,0 +1,20 @@
+@model IEnumerable<WebApp.ViewModels.EmployeeHours>
+
+@{
+    ViewBag.Title = "Table";
+}<h2>Employee Total Time Worked</h2>
+
+<table class="table">  
+    <tr style="background-color: rgb(162, 161, 161);">  
+        <th> Name </th>  
+        <th> Total Time (hrs) </th>
+    </tr>  
+    @foreach (var d in Model)  
+    {  
+        string style = d.Total < 100 ? "background-color:Red": "";
+        <tr style="@style">  
+            <td>@d.Name</td>  
+            <td>@d.Total</td>  
+        </tr>  
+    }  
+</table>  
